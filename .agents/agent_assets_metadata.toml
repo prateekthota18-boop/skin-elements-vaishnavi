@@ -1,0 +1,38 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "m1_h_fbL7OnycMLCxD-eD"
+uri = "file://artifacts/happy-life-clinic/src/assets/images/hero-model.png"
+type = "image"
+title = "Hero model portrait"
+
+[[generated]]
+id = "0u1RHaXKBZFFj2v0m3KxS"
+uri = "file://artifacts/happy-life-clinic/src/assets/images/skin-texture.png"
+type = "image"
+title = "Glowing skin texture"
+
+[[generated]]
+id = "8AZ9gXoYEhGp7WARScZqp"
+uri = "file://artifacts/happy-life-clinic/src/assets/images/serum-application.png"
+type = "image"
+title = "Serum application"
+
+[[generated]]
+id = "uSfKDwGGwZAR6YU9SOtvP"
+uri = "file://artifacts/happy-life-clinic/src/assets/images/side-profile.png"
+type = "image"
+title = "Side profile radiant skin"
+
+[[generated]]
+id = "4a-a4ArLP_B-fy2jmTEeS"
+uri = "file://artifacts/happy-life-clinic/src/assets/images/product-bottle.png"
+type = "image"
+title = "Amber dropper bottle"
+
+[[generated]]
+id = "5eJwHxZ7gNA2qjzX_v3o8"
+uri = "file://artifacts/happy-life-clinic/src/assets/images/treatment.png"
+type = "image"
+title = "Clinical luxe treatment"
