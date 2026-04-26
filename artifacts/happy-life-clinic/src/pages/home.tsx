@@ -12,6 +12,7 @@ import treatmentImg from "@/assets/images/treatment.png";
 import skinElementsLogo from "@/assets/images/skin-elements-logo.png";
 import clinicInterior1 from "@/assets/images/clinic-interior-1.jpg";
 import clinicInterior2 from "@/assets/images/clinic-interior-2.jpg";
+import drVaishnaviImg from "@/assets/images/dr-vaishnavi.webp";
 
 const WHATSAPP_URL = "https://wa.me/917507649901?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20The%20Skin%20Elements";
 
@@ -275,6 +276,70 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Meet the Doctor */}
+      <section id="doctor" className="py-24 bg-background overflow-hidden">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="md:col-span-5 relative"
+            >
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-mustard/30 -z-0"></div>
+              <div className="absolute -bottom-6 -right-6 w-40 h-40 border-2 border-terracotta/40 -z-0"></div>
+              <div className="relative overflow-hidden">
+                <RevealImage
+                  src={drVaishnaviImg}
+                  alt="Dr. Vaishnavi — Founder, The Skin Elements"
+                  className="w-full aspect-[3/4]"
+                />
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="md:col-span-7"
+            >
+              <div className="inline-block bg-mustard text-mustard-foreground text-[10px] font-bold px-3 py-1 uppercase tracking-widest mb-8">
+                Meet the Expert
+              </div>
+              <h2 className="text-4xl md:text-6xl font-light text-foreground leading-[1.05] mb-2">
+                Dr. <span className="font-serif italic text-terracotta">Vaishnavi</span>
+              </h2>
+              <p className="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-8">
+                Founder & Lead Dermatologist
+              </p>
+              <p className="text-foreground/80 text-lg font-light leading-relaxed mb-6">
+                Dr. Vaishnavi leads The Skin Elements with a single conviction — that healthy skin and hair come from honest, science-led care, never one-size-fits-all packages.
+              </p>
+              <p className="text-muted-foreground font-light leading-relaxed mb-10">
+                Trained in advanced dermatology, aesthetic procedures and laser medicine, she personally consults with every patient and designs each protocol around your skin's individual needs, lifestyle and goals.
+              </p>
+
+              <div className="grid grid-cols-3 gap-6 pt-8 border-t border-border/40">
+                <div>
+                  <div className="font-serif text-3xl text-terracotta mb-1">10+</div>
+                  <div className="text-[11px] uppercase tracking-widest text-muted-foreground">Years of Practice</div>
+                </div>
+                <div>
+                  <div className="font-serif text-3xl text-terracotta mb-1">5000+</div>
+                  <div className="text-[11px] uppercase tracking-widest text-muted-foreground">Patients Treated</div>
+                </div>
+                <div>
+                  <div className="font-serif text-3xl text-terracotta mb-1">15+</div>
+                  <div className="text-[11px] uppercase tracking-widest text-muted-foreground">Advanced Treatments</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section id="testimonials" className="py-24 bg-muted/40">
         <div className="container mx-auto px-6 md:px-12">
@@ -354,18 +419,29 @@ export default function Home() {
         </div>
         
         {/* Map */}
-        <div className="h-[40vh] w-full bg-muted">
-          <iframe 
-            src="https://www.google.com/maps?q=Office+No+17B,+Mudra+Commercial+Complex,+Pune-Satara+Rd,+Bibwewadi,+Pune+411037&output=embed" 
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen 
-            loading="lazy" 
+        <a
+          href="https://maps.google.com/?q=The+Skin+Elements+Mudra+Commercial+Complex+Bibwewadi+Pune"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block h-[40vh] w-full bg-muted relative group"
+          aria-label="Open The Skin Elements location in Google Maps"
+        >
+          <iframe
+            title="The Skin Elements clinic location"
+            src="https://maps.google.com/maps?q=Mudra%20Commercial%20Complex%2C%20Pune-Satara%20Rd%2C%20Bibwewadi%2C%20Pune%20411037&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-full grayscale-[50%] contrast-[90%] opacity-90 mix-blend-multiply"
+            className="w-full h-full pointer-events-none"
           ></iframe>
-        </div>
+          <div className="absolute bottom-6 left-6 bg-background/95 backdrop-blur px-5 py-3 shadow-lg border border-border/40 group-hover:translate-y-[-2px] transition-transform">
+            <div className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Find us</div>
+            <div className="text-sm font-medium">Get directions on Google Maps →</div>
+          </div>
+        </a>
       </section>
 
       {/* Footer */}
