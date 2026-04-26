@@ -175,6 +175,19 @@ export default function Home() {
             </div>
           </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-1 mb-1">
+            <RevealImage
+              src={clinicInterior1}
+              alt="The Skin Elements clinic reception"
+              className="aspect-[16/10] w-full"
+            />
+            <RevealImage
+              src={clinicInterior2}
+              alt="Treatment room at The Skin Elements"
+              className="aspect-[16/10] w-full"
+            />
+          </div>
+
           <div className="grid md:grid-cols-12 gap-1">
             <div className="md:col-span-4 bg-background p-10 border border-border/40 hover:border-terracotta transition-colors group">
               <h3 className="text-2xl font-serif mb-4 group-hover:text-terracotta transition-colors">Acne Treatment</h3>
@@ -221,9 +234,9 @@ export default function Home() {
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="order-2 md:order-1 relative">
-              <RevealImage src={clinicInterior1} alt="The Skin Elements clinic reception" className="w-4/5 aspect-[3/4]" />
+              <RevealImage src={sideProfileImg} alt="Side profile" className="w-4/5 aspect-[3/4]" />
               <div className="absolute -bottom-10 -right-4 w-2/3 aspect-square border-8 border-background">
-                <RevealImage src={clinicInterior2} alt="Treatment room at The Skin Elements" className="w-full h-full" />
+                <RevealImage src={productBottleImg} alt="Serum bottle" className="w-full h-full" />
               </div>
             </div>
             <div className="order-1 md:order-2">
