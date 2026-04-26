@@ -1,7 +1,718 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="scroll-smooth">
 <head>
-<meta http-equiv="refresh" content="0; url=./artifacts/skin-clinic/index.html">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>The Skin Elements — Dr. Vaishnavi's Skin, Hair, Laser & Wellness Clinic, Pune</title>
+    <meta name="description" content="Dr. Vaishnavi's Skin, Hair, Laser & Wellness Clinic in Bibwewadi, Pune. Expert dermatology" />
+    <meta property="og:title" content="The Skin Elements — Dr. Vaishnavi's Clinic" />
+    <meta property="og:description" content="Skin, hair, laser and wellness care in Bibwewadi, Pune." />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'hsl(34, 100%, 98%)',
+                        foreground: 'hsl(30, 4%, 17%)',
+                        border: 'hsl(32, 40%, 85%)',
+                        muted: {
+                            DEFAULT: 'hsl(33, 47%, 92%)',
+                            foreground: 'hsl(30, 4%, 40%)',
+                        },
+                        terracotta: {
+                            DEFAULT: 'hsl(12, 53%, 48%)',
+                            foreground: 'hsl(34, 100%, 98%)',
+                        },
+                        mustard: {
+                            DEFAULT: 'hsl(43, 90%, 65%)',
+                            foreground: 'hsl(30, 4%, 17%)',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cormorant Garamond', 'serif'],
+                    },
+                    borderRadius: {
+                        none: '0',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --background: 34 100% 98%;
+            --foreground: 30 4% 17%;
+            --border: 32 40% 85%;
+            --terracotta: 12 53% 48%;
+            --terracotta-foreground: 34 100% 98%;
+            --mustard: 43 90% 65%;
+            --mustard-foreground: 30 4% 17%;
+        }
+
+        body {
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+        }
+
+        .reveal-image {
+            opacity: 0;
+            transform: scale(1.1);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-image.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .selection-terracotta::selection {
+            background: hsl(var(--terracotta));
+            color: hsl(var(--terracotta-foreground));
+        }
+
+        .btn-hover-terracotta:hover {
+            background-color: hsl(var(--terracotta));
+            color: hsl(var(--terracotta-foreground));
+        }
+
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .reveal-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .marquee-container {
+            display: flex;
+            overflow: hidden;
+            user-select: none;
+            gap: 2rem;
+            position: relative;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        .marquee-content {
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-around;
+            min-width: 100%;
+            gap: 2rem;
+            animation: marquee 60s linear infinite;
+        }
+
+        .marquee-container:hover .marquee-content {
+            animation-play-state: paused;
+        }
+    </style>
 </head>
-<body>Redirecting...</body>
+<body class="selection-terracotta">
+    <div class="flex flex-col min-h-screen bg-background">
+        
+        <!-- Top Nav -->
+        <nav class="flex items-center justify-between p-6 md:px-12 border-b border-border/40 sticky top-0 bg-background/80 backdrop-blur-md z-50">
+            <div class="font-serif text-2xl tracking-wide text-foreground">
+                The Skin<span class="text-terracotta italic ml-1">Elements</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-xs font-semibold tracking-widest uppercase">
+                <a href="#services" class="hover:text-terracotta transition-colors">Treatments</a>
+                <a href="#about" class="hover:text-terracotta transition-colors">Why Us</a>
+                <a href="#testimonials" class="hover:text-terracotta transition-colors">Stories</a>
+            </div>
+            <a href="https://wa.me/917507649901?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20The%20Skin%20Elements" target="_blank" rel="noopener noreferrer">
+                <button class="bg-foreground text-background hover:bg-terracotta hover:text-terracotta-foreground transition-all duration-300 px-6 py-2 text-xs font-semibold tracking-widest uppercase">
+                    BOOK APPOINTMENT
+                </button>
+            </a>
+        </nav>
+
+        <!-- Editorial Hero Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-12 min-h-[90vh]">
+            <!-- Main Title Block -->
+            <div class="md:col-span-7 flex flex-col justify-center p-8 md:p-16 lg:p-24 bg-muted/30">
+                <div class="reveal-up visible">
+                    <div class="inline-block bg-mustard text-mustard-foreground text-[10px] font-bold px-3 py-1 uppercase tracking-widest mb-8">
+                        Skin · Hair · Laser · Wellness
+                    </div>
+                    
+                    <h1 class="text-5xl md:text-7xl lg:text-[7rem] font-light leading-[0.9] tracking-tight text-foreground mb-8">
+                        Reveal your most <br/>
+                        <span class="font-serif italic text-terracotta">radiant</span> skin.
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl text-muted-foreground font-light max-w-md mb-12">
+                        Dr. Vaishnavi's expert skin, hair, laser and wellness care in Bibwewadi, Pune.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row items-start gap-4">
+                        <a href="https://wa.me/917507649901?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20The%20Skin%20Elements" target="_blank" rel="noopener noreferrer">
+                            <button class="bg-terracotta text-terracotta-foreground hover:bg-terracotta/90 h-14 px-8 text-sm uppercase tracking-widest flex items-center group">
+                                Book on WhatsApp
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Tiles -->
+            <div class="md:col-span-5 grid grid-rows-2">
+                <div class="overflow-hidden relative h-[50vh] md:h-auto">
+                    <img src="assets/images/clinic-cover.png" alt="Dr. Vaishnavi consulting a patient" class="w-full h-full object-cover reveal-image" />
+                </div>
+                <div class="grid grid-cols-2">
+                    <div class="bg-terracotta text-terracotta-foreground p-8 flex flex-col justify-between">
+                        <div class="font-serif italic text-2xl">Purest form of care.</div>
+                        <div class="w-8 h-[1px] bg-terracotta-foreground/50 mt-4 mb-4"></div>
+                        <div class="text-sm font-light opacity-90">Tailored to your unique skin story.</div>
+                    </div>
+                    <div class="overflow-hidden relative">
+                        <img src="assets/images/skin-texture.png" alt="Dewy skin texture" class="w-full h-full object-cover reveal-image" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Stats Ticker -->
+        <section class="border-y border-border/40 bg-background py-8">
+            <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-8 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-border/40 text-center">
+                <div class="flex-1 w-full pt-4 md:pt-0">
+                    <div class="text-4xl font-serif text-terracotta mb-1">5.0</div>
+                    <div class="text-xs uppercase tracking-widest text-muted-foreground">Rating</div>
+                </div>
+                <div class="flex-1 w-full pt-4 md:pt-0">
+                    <div class="text-4xl font-serif text-foreground mb-1"><span class="counter" data-target="47">0</span>+</div>
+                    <div class="text-xs uppercase tracking-widest text-muted-foreground">Happy Patients</div>
+                </div>
+                <div class="flex-1 w-full pt-4 md:pt-0">
+                    <div class="text-4xl font-serif text-foreground mb-1"><span class="counter" data-target="10">0</span>+</div>
+                    <div class="text-xs uppercase tracking-widest text-muted-foreground">Treatments</div>
+                </div>
+                <div class="flex-1 w-full pt-4 md:pt-0 flex flex-col items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-muted-foreground mb-2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <div class="text-xs uppercase tracking-widest text-muted-foreground">Open till 9:00 PM</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section id="services" class="py-24 bg-muted/20">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+                    <div>
+                        <div class="inline-block bg-mustard text-mustard-foreground text-[10px] font-bold px-3 py-1 uppercase tracking-widest mb-6">
+                            Treatments
+                        </div>
+                        <h2 class="text-4xl md:text-6xl font-light text-foreground">
+                            Advanced <span class="font-serif italic text-terracotta">Solutions</span>
+                        </h2>
+                    </div>
+                    <div class="max-w-sm text-muted-foreground font-light text-sm">
+                        Carefully curated treatments, personally designed by Dr. Vaishnavi.
+                    </div>
+                </div>
+
+                <!-- Top Part: Asymmetric Collage -->
+                <div class="hidden md:grid grid-cols-12 gap-4 mb-40 h-[900px] relative">
+                    <!-- Photo 1: Large Base -->
+                    <div class="col-span-8 h-[85%] relative group overflow-hidden shadow-2xl">
+                        <img src="assets/images/treatment.png" alt="Advanced Treatment" class="w-full h-full object-cover reveal-image" />
+                        <div class="absolute inset-0 bg-[#F5EDE3]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                    </div>
+                    
+                    <!-- Photo 2: Tall Overlap Right -->
+                    <div class="col-span-5 h-[65%] absolute top-20 right-0 z-10 group overflow-hidden shadow-2xl border-[12px] border-background">
+                        <img src="assets/images/clinic-interior-3.jpg" alt="Clinical Excellence" class="w-full h-full object-cover reveal-image" />
+                        <div class="absolute inset-0 bg-[#F5EDE3]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                    </div>
+
+                    <!-- Photo 3: Overlap Bottom Left -->
+                    <div class="col-span-4 h-[40%] absolute -bottom-12 left-10 z-20 group overflow-hidden shadow-2xl border-[8px] border-background">
+                        <img src="assets/images/clinic-interior-1.jpg" alt="The Clinic" class="w-full h-full object-cover reveal-image" />
+                        <div class="absolute inset-0 bg-[#F5EDE3]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                    </div>
+
+                    <!-- Photo 4: Small Accent -->
+                    <div class="col-span-3 h-[30%] absolute bottom-20 right-1/4 z-30 group overflow-hidden shadow-xl border-[4px] border-background">
+                        <img src="assets/images/clinic-interior-2.jpg" alt="Care" class="w-full h-full object-cover reveal-image" />
+                        <div class="absolute inset-0 bg-[#F5EDE3]/30 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+                    </div>
+                </div>
+
+                <!-- Mobile Collage (Simplified) -->
+                <div class="grid md:hidden grid-cols-2 gap-2 mb-24">
+                    <img src="assets/images/treatment.png" class="aspect-square object-cover" alt="Treatment">
+                    <img src="assets/images/clinic-interior-3.jpg" class="aspect-square object-cover" alt="Treatment">
+                    <img src="assets/images/clinic-interior-1.jpg" class="aspect-square object-cover" alt="Clinic">
+                    <img src="assets/images/clinic-interior-2.jpg" class="aspect-square object-cover" alt="Interior">
+                </div>
+
+                <!-- Bottom Part: Featured Services -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-32 max-w-5xl mx-auto">
+                    <!-- Service 01 -->
+                    <div class="flex flex-col border-l-[1px] border-terracotta/30 pl-10 py-2 hover:-translate-y-3 transition-all duration-700 group relative">
+                        <div class="absolute -left-[3px] top-0 h-16 w-[5px] bg-terracotta"></div>
+                        <div class="text-terracotta/20 text-8xl font-serif -ml-4 mb-2 select-none group-hover:text-terracotta/40 transition-colors">01</div>
+                        <h3 class="text-4xl font-serif mb-6 group-hover:text-terracotta transition-colors">Acne Treatment</h3>
+                        <p class="text-muted-foreground font-light text-lg leading-relaxed">Customised dermatological protocols for active acne and scar prevention.</p>
+                    </div>
+
+                    <!-- Service 02 (Offset) -->
+                    <div class="flex flex-col border-l-[1px] border-terracotta/30 pl-10 py-2 hover:-translate-y-3 transition-all duration-700 group relative md:mt-24">
+                        <div class="absolute -left-[3px] top-0 h-16 w-[5px] bg-terracotta"></div>
+                        <div class="text-terracotta/20 text-8xl font-serif -ml-4 mb-2 select-none group-hover:text-terracotta/40 transition-colors">02</div>
+                        <h3 class="text-4xl font-serif mb-6 group-hover:text-terracotta transition-colors">Laser Hair Removal</h3>
+                        <p class="text-muted-foreground font-light text-lg leading-relaxed">Advanced laser technology for safe, permanent reduction across all skin types.</p>
+                    </div>
+
+                    <!-- Service 03 -->
+                    <div class="flex flex-col border-l-[1px] border-terracotta/30 pl-10 py-2 hover:-translate-y-3 transition-all duration-700 group relative">
+                        <div class="absolute -left-[3px] top-0 h-16 w-[5px] bg-terracotta"></div>
+                        <div class="text-terracotta/20 text-8xl font-serif -ml-4 mb-2 select-none group-hover:text-terracotta/40 transition-colors">03</div>
+                        <h3 class="text-4xl font-serif mb-6 group-hover:text-terracotta transition-colors">Botox & Fillers</h3>
+                        <p class="text-muted-foreground font-light text-lg leading-relaxed">Precision aesthetic injectables to restore youthful volume and soften lines.</p>
+                    </div>
+
+                    <!-- Service 04 (Offset) -->
+                    <div class="flex flex-col border-l-[1px] border-terracotta/30 pl-10 py-2 hover:-translate-y-3 transition-all duration-700 group relative md:mt-24">
+                        <div class="absolute -left-[3px] top-0 h-16 w-[5px] bg-terracotta"></div>
+                        <div class="text-terracotta/20 text-8xl font-serif -ml-4 mb-2 select-none group-hover:text-terracotta/40 transition-colors">04</div>
+                        <h3 class="text-4xl font-serif mb-6 group-hover:text-terracotta transition-colors">Face PRP</h3>
+                        <p class="text-muted-foreground font-light text-lg leading-relaxed">Natural rejuvenation using your own growth factors for a luminous glow.</p>
+                    </div>
+
+                    <!-- Service 05 -->
+                    <div class="flex flex-col border-l-[1px] border-terracotta/30 pl-10 py-2 hover:-translate-y-3 transition-all duration-700 group relative">
+                        <div class="absolute -left-[3px] top-0 h-16 w-[5px] bg-terracotta"></div>
+                        <div class="text-terracotta/20 text-8xl font-serif -ml-4 mb-2 select-none group-hover:text-terracotta/40 transition-colors">05</div>
+                        <h3 class="text-4xl font-serif mb-6 group-hover:text-terracotta transition-colors">Skin Brightening</h3>
+                        <p class="text-muted-foreground font-light text-lg leading-relaxed">Targeted brightening therapy for pigmentation, melasma and dullness.</p>
+                    </div>
+
+                    <!-- Service 06 (Offset) -->
+                    <div class="flex flex-col border-l-[1px] border-terracotta/30 pl-10 py-2 hover:-translate-y-3 transition-all duration-700 group relative md:mt-24">
+                        <div class="absolute -left-[3px] top-0 h-16 w-[5px] bg-terracotta"></div>
+                        <div class="text-terracotta/20 text-8xl font-serif -ml-4 mb-2 select-none group-hover:text-terracotta/40 transition-colors">06</div>
+                        <h3 class="text-4xl font-serif mb-6 group-hover:text-terracotta transition-colors">Hair Transplant</h3>
+                        <p class="text-muted-foreground font-light text-lg leading-relaxed">State-of-the-art hair restoration for natural, lasting density and growth.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- About Section -->
+        <section id="about" class="py-24 bg-background">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 md:order-1 relative">
+                        <div class="overflow-hidden relative w-4/5 aspect-[3/4]">
+                            <img src="assets/images/side-profile.png" alt="Side profile" class="w-full h-full object-cover reveal-image" />
+                        </div>
+                        <div class="absolute -bottom-10 -right-4 w-2/3 aspect-square border-8 border-background overflow-hidden">
+                            <img src="assets/images/product-bottle.png" alt="Serum bottle" class="w-full h-full object-cover reveal-image" />
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <div class="inline-block bg-mustard text-mustard-foreground text-[10px] font-bold px-3 py-1 uppercase tracking-widest mb-8">
+                            Why Us
+                        </div>
+                        <h2 class="text-4xl md:text-5xl font-serif italic text-terracotta mb-10 leading-tight">
+                            "At The Skin Elements, we believe every skin has a story."
+                        </h2>
+                        
+                        <div class="space-y-8">
+                            <div class="flex gap-4">
+                                <div class="w-8 h-[1px] bg-terracotta mt-3 shrink-0"></div>
+                                <div>
+                                    <h3 class="text-lg font-medium mb-2 uppercase tracking-wider text-sm">Expert Care</h3>
+                                    <p class="text-muted-foreground font-light">Led by Dr. Vaishnavi — an experienced dermatologist who listens before she treats.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-8 h-[1px] bg-terracotta mt-3 shrink-0"></div>
+                                <div>
+                                    <h3 class="text-lg font-medium mb-2 uppercase tracking-wider text-sm">Peaceful Environment</h3>
+                                    <p class="text-muted-foreground font-light">A calm, private clinic on Pune-Satara Road that feels like a retreat, not a queue.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-8 h-[1px] bg-terracotta mt-3 shrink-0"></div>
+                                <div>
+                                    <h3 class="text-lg font-medium mb-2 uppercase tracking-wider text-sm">Personalized Plans</h3>
+                                    <p class="text-muted-foreground font-light">No generic routines. Every treatment is tailored to your unique skin and hair goals.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Meet the Doctor -->
+        <section id="doctor" class="py-24 bg-background overflow-hidden">
+            <div class="container mx-auto px-6 md:px-12">
+                <div class="grid md:grid-cols-12 gap-12 md:gap-16 items-center">
+                    <div class="md:col-span-5 relative">
+                        <div class="absolute -top-6 -left-6 w-32 h-32 bg-mustard/30 -z-0"></div>
+                        <div class="absolute -bottom-6 -right-6 w-40 h-40 border-2 border-terracotta/40 -z-0"></div>
+                        <div class="relative overflow-hidden">
+                            <img src="assets/images/dr-vaishnavi.webp" alt="Dr. Vaishnavi" class="w-full aspect-[3/4] object-cover reveal-image" />
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-7">
+                        <div class="inline-block bg-mustard text-mustard-foreground text-[10px] font-bold px-3 py-1 uppercase tracking-widest mb-8">
+                            Meet the Expert
+                        </div>
+                        <h2 class="text-4xl md:text-6xl font-light text-foreground leading-[1.05] mb-2">
+                            Dr. <span class="font-serif italic text-terracotta">Vaishnavi</span>
+                        </h2>
+                        <p class="text-sm uppercase tracking-[0.2em] text-muted-foreground mb-8">
+                            Founder & Lead Dermatologist
+                        </p>
+                        <p class="text-foreground/80 text-lg font-light leading-relaxed mb-6">
+                            Dr. Vaishnavi leads The Skin Elements with a single conviction — that healthy skin and hair come from honest, science-led care, never one-size-fits-all packages.
+                        </p>
+                        <p class="text-muted-foreground font-light leading-relaxed mb-10">
+                            Trained in advanced dermatology, aesthetic procedures and laser medicine, she personally consults with every patient and designs each protocol around your skin's individual needs, lifestyle and goals.
+                        </p>
+
+                        <div class="grid grid-cols-3 gap-6 pt-8 border-t border-border/40">
+                            <div>
+                                <div class="font-serif text-3xl text-terracotta mb-1">10+</div>
+                                <div class="text-[11px] uppercase tracking-widest text-muted-foreground">Years of Practice</div>
+                            </div>
+                            <div>
+                                <div class="font-serif text-3xl text-terracotta mb-1">5000+</div>
+                                <div class="text-[11px] uppercase tracking-widest text-muted-foreground">Patients Treated</div>
+                            </div>
+                            <div>
+                                <div class="font-serif text-3xl text-terracotta mb-1">15+</div>
+                                <div class="text-[11px] uppercase tracking-widest text-muted-foreground">Advanced Treatments</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section id="testimonials" class="py-24 bg-muted/40 overflow-hidden">
+            <div class="container mx-auto px-6 md:px-12 mb-16">
+                <div class="text-center">
+                    <h2 class="text-4xl md:text-5xl font-light mb-4">
+                        Patient <span class="font-serif italic text-terracotta">Stories</span>
+                    </h2>
+                    <p class="text-muted-foreground font-light">What our patients say about us • 5.0 ★ on Google</p>
+                </div>
+            </div>
+
+            <div class="marquee-container">
+                <!-- First half of marquee -->
+                <div class="marquee-content">
+                    <!-- Review 1 -->
+                    <div class="review-card w-[400px] bg-background p-10 rounded-2xl shadow-sm border border-border/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-mustard mb-4">★★★★★</div>
+                            <p class="text-foreground/90 font-serif text-lg italic leading-relaxed mb-8">"I visited the skin elements clinic for my acne and pigmentation issue. Dr. Vaishnavi suggested me to go for chemical peels treatment and PRP+ microneedling treatment and after few sessions only I am seeing very positive result in my skin."</p>
+                        </div>
+                        <div class="font-bold uppercase tracking-widest text-xs">— Sandeep Shudla</div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="review-card w-[400px] bg-background p-10 rounded-2xl shadow-sm border border-border/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-mustard mb-4">★★★★★</div>
+                            <p class="text-foreground/90 font-serif text-lg italic leading-relaxed mb-8">"I visit this clinic for a regular skin and hair analysis and I am very happy with the overall experience. Dr. Vaishnavi has great knowledge and after detailed consultation she suggested few products to start on a regular basis for a healthy skin and hair."</p>
+                        </div>
+                        <div class="font-bold uppercase tracking-widest text-xs">— Arooph Vaidya</div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="review-card w-[400px] bg-background p-10 rounded-2xl shadow-sm border border-border/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-mustard mb-4">★★★★★</div>
+                            <p class="text-foreground/90 font-serif text-lg italic leading-relaxed mb-8">"The doc nicely explains the cause of the issue a patient is facing using pictures and before after pictures makes it very easy to understand everything. I really loved Dr. Vaishnavi's consultation."</p>
+                        </div>
+                        <div class="font-bold uppercase tracking-widest text-xs">— Yash Thack</div>
+                    </div>
+                    <!-- Review 4 -->
+                    <div class="review-card w-[400px] bg-background p-10 rounded-2xl shadow-sm border border-border/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-mustard mb-4">★★★★★</div>
+                            <p class="text-foreground/90 font-serif text-lg italic leading-relaxed mb-8">"I consulted for treatment for dull and uneven skin tone and she suggested a few treatments for me. After a treatment I can see a improvement in my skin. It looks brighter and nicer."</p>
+                        </div>
+                        <div class="font-bold uppercase tracking-widest text-xs">— Jay Kishink</div>
+                    </div>
+                    <!-- Review 5 -->
+                    <div class="review-card w-[400px] bg-background p-10 rounded-2xl shadow-sm border border-border/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-mustard mb-4">★★★★★</div>
+                            <p class="text-foreground/90 font-serif text-lg italic leading-relaxed mb-8">"Really happy with the results! My skin feels much smoother and healthier. The texture has improved and it gives a nice natural glow. Definitely worth it."</p>
+                        </div>
+                        <div class="font-bold uppercase tracking-widest text-xs">— MuedAfque Lotter</div>
+                    </div>
+                    <!-- Review 6 -->
+                    <div class="review-card w-[400px] bg-background p-10 rounded-2xl shadow-sm border border-border/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-mustard mb-4">★★★★★</div>
+                            <p class="text-foreground/90 font-serif text-lg italic leading-relaxed mb-8">"Living in Germany, I was struggling with stubborn acne and hair fall for years until I consulted Dr. Vaishnavi online for my persistent acne and severe hair fall issues. Despite being thousands of miles away, the consultation felt very personal."</p>
+                        </div>
+                        <div class="font-bold uppercase tracking-widest text-xs">— Ruben Damjanovic</div>
+                    </div>
+                    <!-- Review 7 -->
+                    <div class="review-card w-[400px] bg-background p-10 rounded-2xl shadow-sm border border-border/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-mustard mb-4">★★★★★</div>
+                            <p class="text-foreground/90 font-serif text-lg italic leading-relaxed mb-8">"I visited The Skin Elements clinic for a skin consultation and had a wonderful experience. The staff was friendly and welcoming. The doctors carefully listened to my concerns, explained the root cause and suggested the right treatments."</p>
+                        </div>
+                        <div class="font-bold uppercase tracking-widest text-xs">— Rutavi Sajanval</div>
+                    </div>
+                </div>
+                
+                <!-- Duplicate for infinite loop -->
+                <div class="marquee-content">
+                    <!-- Review 1 -->
+                    <div class="review-card w-[400px] bg-background p-10 rounded-2xl shadow-sm border border-border/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-mustard mb-4">★★★★★</div>
+                            <p class="text-foreground/90 font-serif text-lg italic leading-relaxed mb-8">"I visited the skin elements clinic for my acne and pigmentation issue. Dr. Vaishnavi suggested me to go for chemical peels treatment and PRP+ microneedling treatment and after few sessions only I am seeing very positive result in my skin."</p>
+                        </div>
+                        <div class="font-bold uppercase tracking-widest text-xs">— Sandeep Shudla</div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="review-card w-[400px] bg-background p-10 rounded-2xl shadow-sm border border-border/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-mustard mb-4">★★★★★</div>
+                            <p class="text-foreground/90 font-serif text-lg italic leading-relaxed mb-8">"I visit this clinic for a regular skin and hair analysis and I am very happy with the overall experience. Dr. Vaishnavi has great knowledge and after detailed consultation she suggested few products to start on a regular basis for a healthy skin and hair."</p>
+                        </div>
+                        <div class="font-bold uppercase tracking-widest text-xs">— Arooph Vaidya</div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="review-card w-[400px] bg-background p-10 rounded-2xl shadow-sm border border-border/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-mustard mb-4">★★★★★</div>
+                            <p class="text-foreground/90 font-serif text-lg italic leading-relaxed mb-8">"The doc nicely explains the cause of the issue a patient is facing using pictures and before after pictures makes it very easy to understand everything. I really loved Dr. Vaishnavi's consultation."</p>
+                        </div>
+                        <div class="font-bold uppercase tracking-widest text-xs">— Yash Thack</div>
+                    </div>
+                    <!-- Review 4 -->
+                    <div class="review-card w-[400px] bg-background p-10 rounded-2xl shadow-sm border border-border/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-mustard mb-4">★★★★★</div>
+                            <p class="text-foreground/90 font-serif text-lg italic leading-relaxed mb-8">"I consulted for treatment for dull and uneven skin tone and she suggested a few treatments for me. After a treatment I can see a improvement in my skin. It looks brighter and nicer."</p>
+                        </div>
+                        <div class="font-bold uppercase tracking-widest text-xs">— Jay Kishink</div>
+                    </div>
+                    <!-- Review 5 -->
+                    <div class="review-card w-[400px] bg-background p-10 rounded-2xl shadow-sm border border-border/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-mustard mb-4">★★★★★</div>
+                            <p class="text-foreground/90 font-serif text-lg italic leading-relaxed mb-8">"Really happy with the results! My skin feels much smoother and healthier. The texture has improved and it gives a nice natural glow. Definitely worth it."</p>
+                        </div>
+                        <div class="font-bold uppercase tracking-widest text-xs">— MuedAfque Lotter</div>
+                    </div>
+                    <!-- Review 6 -->
+                    <div class="review-card w-[400px] bg-background p-10 rounded-2xl shadow-sm border border-border/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-mustard mb-4">★★★★★</div>
+                            <p class="text-foreground/90 font-serif text-lg italic leading-relaxed mb-8">"Living in Germany, I was struggling with stubborn acne and hair fall for years until I consulted Dr. Vaishnavi online for my persistent acne and severe hair fall issues. Despite being thousands of miles away, the consultation felt very personal."</p>
+                        </div>
+                        <div class="font-bold uppercase tracking-widest text-xs">— Ruben Damjanovic</div>
+                    </div>
+                    <!-- Review 7 -->
+                    <div class="review-card w-[400px] bg-background p-10 rounded-2xl shadow-sm border border-border/20 flex flex-col justify-between">
+                        <div>
+                            <div class="flex text-mustard mb-4">★★★★★</div>
+                            <p class="text-foreground/90 font-serif text-lg italic leading-relaxed mb-8">"I visited The Skin Elements clinic for a skin consultation and had a wonderful experience. The staff was friendly and welcoming. The doctors carefully listened to my concerns, explained the root cause and suggested the right treatments."</p>
+                        </div>
+                        <div class="font-bold uppercase tracking-widest text-xs">— Rutavi Sajanval</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="bg-foreground text-background">
+            <div class="grid md:grid-cols-2">
+                <div class="p-12 md:p-24 flex flex-col justify-center">
+                    <h2 class="text-5xl md:text-7xl font-light mb-8 leading-tight">
+                        Ready to start your <br/>
+                        <span class="font-serif italic text-terracotta">skin journey?</span>
+                    </h2>
+                    
+                    <a href="https://wa.me/917507649901?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20The%20Skin%20Elements" target="_blank" rel="noopener noreferrer" class="inline-block">
+                        <button class="bg-terracotta text-terracotta-foreground hover:bg-terracotta/90 h-16 px-10 text-sm uppercase tracking-widest flex items-center group">
+                            Message us on WhatsApp
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                        </button>
+                    </a>
+                </div>
+
+                <div class="bg-muted text-foreground p-12 md:p-24 border-l border-border/20 flex flex-col justify-between">
+                    <h3 class="text-3xl font-serif mb-12">Visit the Clinic</h3>
+                    
+                    <div class="space-y-8 text-sm uppercase tracking-widest font-semibold">
+                        <div>
+                            <div class="text-muted-foreground mb-2 text-xs">Address</div>
+                            <div class="font-light normal-case tracking-normal text-base">
+                                Office No 17B, Mudra Commercial Complex,<br />
+                                Pune-Satara Rd, Bibwewadi,<br />
+                                Pune 411037
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="text-muted-foreground mb-2 text-xs">Contact</div>
+                            <div class="font-light normal-case tracking-normal text-base">
+                                <a href="tel:+917447221616" class="hover:text-terracotta transition-colors">074472 21616</a>
+                                <span class="text-muted-foreground"> · </span>
+                                <a href="https://wa.me/917507649901" target="_blank" rel="noopener noreferrer" class="hover:text-terracotta transition-colors">WhatsApp</a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="text-muted-foreground mb-2 text-xs">Timings</div>
+                            <div class="font-light normal-case tracking-normal text-base">Mon–Sun, open till 9:00 PM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map -->
+            <a
+                href="https://maps.google.com/?q=The+Skin+Elements+Mudra+Commercial+Complex+Bibwewadi+Pune"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block h-[40vh] w-full bg-muted relative group"
+            >
+                <iframe
+                    title="The Skin Elements clinic location"
+                    src="https://maps.google.com/maps?q=Mudra%20Commercial%20Complex%2C%20Pune-Satara%20Rd%2C%20Bibwewadi%2C%20Pune%20411037&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style="border: 0"
+                    allowfullscreen
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="w-full h-full pointer-events-none"
+                ></iframe>
+                <div class="absolute bottom-6 left-6 bg-background/95 backdrop-blur px-5 py-3 shadow-lg border border-border/40 group-hover:translate-y-[-2px] transition-transform">
+                    <div class="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Find us</div>
+                    <div class="text-sm font-medium">Get directions on Google Maps →</div>
+                </div>
+            </a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 bg-background border-t border-border/40 text-center">
+            <div class="container mx-auto px-6">
+                <div class="flex justify-center mb-6">
+                    <img src="assets/images/skin-elements-logo.png" alt="The Skin Elements" class="h-32 w-auto" />
+                </div>
+                <p class="text-muted-foreground text-sm font-light mb-8 max-w-sm mx-auto">
+                    Dr. Vaishnavi's Skin, Hair, Laser & Wellness Clinic — Bibwewadi, Pune.
+                </p>
+                
+                <div class="flex justify-center mb-12">
+                    <a href="https://wa.me/917507649901" target="_blank" rel="noopener noreferrer" class="w-12 h-12 flex items-center justify-center border border-border/40 hover:border-terracotta hover:text-terracotta transition-colors">
+                        <svg viewBox="0 0 24 24" class="w-5 h-5 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                    </a>
+                </div>
+                
+                <div class="text-[10px] uppercase tracking-widest text-muted-foreground opacity-60">
+                    &copy; <span id="year"></span> The Skin Elements — Dr. Vaishnavi's Clinic. All rights reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Intersection Observer for Reveal Images and Elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-image, .reveal-up').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Counter Animation
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-target'));
+                    animateCounter(entry.target, target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.counter').forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        function animateCounter(el, target) {
+            let start = 0;
+            const duration = 2000; // 2 seconds
+            const startTime = performance.now();
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeOutQuad = t => t * (2 - t);
+                const currentCount = Math.floor(easeOutQuad(progress) * target);
+                
+                el.textContent = currentCount;
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    el.textContent = target;
+                }
+            }
+
+            requestAnimationFrame(update);
+        }
+    </script>
+</body>
 </html>
