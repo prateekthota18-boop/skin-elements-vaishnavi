@@ -3,14 +3,15 @@ import { useEffect, useRef, useState } from "react";
 import { MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import heroModelImg from "@/assets/images/hero-model.png";
+import heroCoverImg from "@/assets/images/clinic-cover.jpg";
 import skinTextureImg from "@/assets/images/skin-texture.png";
 import serumAppImg from "@/assets/images/serum-application.png";
 import sideProfileImg from "@/assets/images/side-profile.png";
 import productBottleImg from "@/assets/images/product-bottle.png";
 import treatmentImg from "@/assets/images/treatment.png";
+import skinElementsLogo from "@/assets/images/skin-elements-logo.png";
 
-const WHATSAPP_URL = "https://wa.me/919396428321?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20Happy%20Life%20Clinic";
+const WHATSAPP_URL = "https://wa.me/917507649901?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20The%20Skin%20Elements";
 
 function Counter({ from, to, duration = 2, suffix = "" }: { from: number; to: number; duration?: number; suffix?: string }) {
   const [count, setCount] = useState(from);
@@ -64,7 +65,7 @@ export default function Home() {
       {/* Top Nav */}
       <nav className="flex items-center justify-between p-6 md:px-12 border-b border-border/40">
         <div className="font-serif text-2xl tracking-wide text-foreground">
-          Happy Life<span className="text-terracotta italic ml-1">Clinic</span>
+          The Skin<span className="text-terracotta italic ml-1">Elements</span>
         </div>
         <div className="hidden md:flex items-center gap-8 text-xs font-semibold tracking-widest uppercase">
           <a href="#services" className="hover:text-terracotta transition-colors">Treatments</a>
@@ -88,7 +89,7 @@ export default function Home() {
             transition={{ duration: 1 }}
           >
             <div className="inline-block bg-mustard text-mustard-foreground text-[10px] font-bold px-3 py-1 uppercase tracking-widest mb-8">
-              Where skincare meets simplicity
+              Skin · Hair · Laser · Wellness
             </div>
             
             <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-light leading-[0.9] tracking-tight text-foreground mb-8">
@@ -97,7 +98,7 @@ export default function Home() {
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground font-light max-w-md mb-12">
-              Expert dermatology and cosmetic care in the heart of Hyderabad.
+              Dr. Vaishnavi's expert skin, hair, laser and wellness care in Bibwewadi, Pune.
             </p>
             
             <div className="flex flex-col sm:flex-row items-start gap-4">
@@ -114,8 +115,8 @@ export default function Home() {
         {/* Right Tiles */}
         <div className="md:col-span-5 grid grid-rows-2">
           <RevealImage 
-            src={heroModelImg} 
-            alt="Model with radiant skin" 
+            src={heroCoverImg} 
+            alt="Dr. Vaishnavi consulting a patient at The Skin Elements" 
             className="h-[50vh] md:h-auto object-cover"
           />
           <div className="grid grid-cols-2">
@@ -150,7 +151,7 @@ export default function Home() {
           </div>
           <div className="flex-1 w-full pt-4 md:pt-0 flex flex-col items-center">
             <Clock className="w-8 h-8 text-muted-foreground mb-2" strokeWidth={1} />
-            <div className="text-xs uppercase tracking-widest text-muted-foreground">Open till 10:30 PM</div>
+            <div className="text-xs uppercase tracking-widest text-muted-foreground">Open till 9:00 PM</div>
           </div>
         </div>
       </section>
@@ -168,37 +169,46 @@ export default function Home() {
               </h2>
             </div>
             <div className="max-w-sm text-muted-foreground font-light text-sm">
-              We offer a curated selection of premium dermatology and cosmetic treatments designed to bring out your best skin.
+              A curated selection of premium skin, hair and laser treatments — every protocol personally designed by Dr. Vaishnavi.
             </div>
           </div>
 
           <div className="grid md:grid-cols-12 gap-1">
             <div className="md:col-span-4 bg-background p-10 border border-border/40 hover:border-terracotta transition-colors group">
-              <h3 className="text-2xl font-serif mb-4 group-hover:text-terracotta transition-colors">Deep Peelings</h3>
-              <p className="text-muted-foreground text-sm font-light">Reveal fresh, glowing skin with customized chemical peels.</p>
+              <h3 className="text-2xl font-serif mb-4 group-hover:text-terracotta transition-colors">Acne Treatment</h3>
+              <p className="text-muted-foreground text-sm font-light">Clear active acne and prevent scars with dermat-led, customised protocols.</p>
             </div>
             <div className="md:col-span-8 bg-background p-10 border border-border/40 hover:border-terracotta transition-colors group relative overflow-hidden">
               <RevealImage src={treatmentImg} alt="Treatment" className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none" />
-              <h3 className="text-2xl font-serif mb-4 relative z-10 group-hover:text-terracotta transition-colors">Anti-aging Solutions</h3>
-              <p className="text-muted-foreground text-sm font-light max-w-md relative z-10">Restore youthfulness with advanced, non-invasive therapies tailored for you.</p>
+              <h3 className="text-2xl font-serif mb-4 relative z-10 group-hover:text-terracotta transition-colors">Laser Therapy</h3>
+              <p className="text-muted-foreground text-sm font-light max-w-md relative z-10">Advanced laser solutions for hair removal, scars, pigmentation and skin rejuvenation.</p>
             </div>
             
             <div className="md:col-span-6 bg-terracotta text-terracotta-foreground p-10 border border-terracotta/20">
-              <h3 className="text-2xl font-serif mb-4">Pigmentation Treatment</h3>
-              <p className="text-terracotta-foreground/80 text-sm font-light">Even out skin tone and clear stubborn dark spots safely.</p>
+              <h3 className="text-2xl font-serif mb-4">Skin Brightening</h3>
+              <p className="text-terracotta-foreground/80 text-sm font-light">Achieve a luminous, even-toned complexion with targeted brightening therapy.</p>
             </div>
             <div className="md:col-span-6 bg-background p-10 border border-border/40 hover:border-terracotta transition-colors group">
-              <h3 className="text-2xl font-serif mb-4 group-hover:text-terracotta transition-colors">CoolSculpting</h3>
-              <p className="text-muted-foreground text-sm font-light">Sculpt your body by safely freezing away unwanted fat.</p>
+              <h3 className="text-2xl font-serif mb-4 group-hover:text-terracotta transition-colors">Hair Transplant</h3>
+              <p className="text-muted-foreground text-sm font-light">Restore natural, lasting hair growth with safe, advanced transplant techniques.</p>
             </div>
             
             <div className="md:col-span-7 bg-background p-10 border border-border/40 hover:border-terracotta transition-colors group">
-              <h3 className="text-2xl font-serif mb-4 group-hover:text-terracotta transition-colors">Microneedling</h3>
-              <p className="text-muted-foreground text-sm font-light">Stimulate collagen for smoother, firmer, and tighter skin.</p>
+              <h3 className="text-2xl font-serif mb-4 group-hover:text-terracotta transition-colors">Anti-aging</h3>
+              <p className="text-muted-foreground text-sm font-light">Soften fine lines and restore youthful firmness with non-invasive therapies.</p>
             </div>
             <div className="md:col-span-5 bg-background p-10 border border-border/40 hover:border-terracotta transition-colors group">
-              <h3 className="text-2xl font-serif mb-4 group-hover:text-terracotta transition-colors">Skin Brightening</h3>
-              <p className="text-muted-foreground text-sm font-light">Achieve a luminous, flawless complexion with targeted care.</p>
+              <h3 className="text-2xl font-serif mb-4 group-hover:text-terracotta transition-colors">Face PRP</h3>
+              <p className="text-muted-foreground text-sm font-light">Boost natural collagen and glow using your own platelet-rich plasma.</p>
+            </div>
+
+            <div className="md:col-span-5 bg-background p-10 border border-border/40 hover:border-terracotta transition-colors group">
+              <h3 className="text-2xl font-serif mb-4 group-hover:text-terracotta transition-colors">Microneedling</h3>
+              <p className="text-muted-foreground text-sm font-light">Stimulate collagen for smoother texture, finer pores and tighter skin.</p>
+            </div>
+            <div className="md:col-span-7 bg-background p-10 border border-border/40 hover:border-terracotta transition-colors group">
+              <h3 className="text-2xl font-serif mb-4 group-hover:text-terracotta transition-colors">Pigmentation</h3>
+              <p className="text-muted-foreground text-sm font-light">Targeted treatment for melasma, dark spots and post-acne marks — safe for Indian skin.</p>
             </div>
           </div>
         </div>
@@ -219,7 +229,7 @@ export default function Home() {
                 Why Us
               </div>
               <h2 className="text-4xl md:text-5xl font-serif italic text-terracotta mb-10 leading-tight">
-                "At Happy Life, we believe every skin has a story."
+                "At The Skin Elements, we believe every skin has a story."
               </h2>
               
               <div className="space-y-8">
@@ -227,21 +237,21 @@ export default function Home() {
                   <div className="w-8 h-[1px] bg-terracotta mt-3 shrink-0"></div>
                   <div>
                     <h3 className="text-lg font-medium mb-2 uppercase tracking-wider text-sm">Expert Care</h3>
-                    <p className="text-muted-foreground font-light">Led by an experienced female dermatologist who listens.</p>
+                    <p className="text-muted-foreground font-light">Led by Dr. Vaishnavi — an experienced dermatologist who listens before she treats.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <div className="w-8 h-[1px] bg-terracotta mt-3 shrink-0"></div>
                   <div>
                     <h3 className="text-lg font-medium mb-2 uppercase tracking-wider text-sm">Peaceful Environment</h3>
-                    <p className="text-muted-foreground font-light">A softly lit, warm space that feels like a retreat, not a clinic.</p>
+                    <p className="text-muted-foreground font-light">A calm, private clinic on Pune-Satara Road that feels like a retreat, not a queue.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <div className="w-8 h-[1px] bg-terracotta mt-3 shrink-0"></div>
                   <div>
                     <h3 className="text-lg font-medium mb-2 uppercase tracking-wider text-sm">Personalized Plans</h3>
-                    <p className="text-muted-foreground font-light">No generic routines. Every treatment is tailored to your unique skin.</p>
+                    <p className="text-muted-foreground font-light">No generic routines. Every treatment is tailored to your unique skin and hair goals.</p>
                   </div>
                 </div>
               </div>
@@ -261,9 +271,9 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              "Complete scar is gone from my face — I suffered a lot, thank you madam",
-              "Really good results and peaceful environment, very professional",
-              "Nice timeline results, thank you for taking care of my skin"
+              "My acne is finally under control after years of trying everything — thank you Dr. Vaishnavi",
+              "Genuine results and a calm, professional environment. Truly the best clinic in Bibwewadi",
+              "Visible improvement within the timeline they promised. Thank you for taking such good care of my skin"
             ].map((quote, i) => (
               <motion.div
                 key={i}
@@ -305,20 +315,24 @@ export default function Home() {
               <div>
                 <div className="text-muted-foreground mb-2 text-xs">Address</div>
                 <div className="font-light normal-case tracking-normal text-base">
-                  2nd floor, Legend Corporation,<br />
-                  Barkatpura Main Rd, Kachiguda,<br />
-                  Hyderabad 500027
+                  Office No 17B, Mudra Commercial Complex,<br />
+                  Pune-Satara Rd, Bibwewadi,<br />
+                  Pune 411037
                 </div>
               </div>
               
               <div>
                 <div className="text-muted-foreground mb-2 text-xs">Contact</div>
-                <div className="font-light normal-case tracking-normal text-base">093964 28321</div>
+                <div className="font-light normal-case tracking-normal text-base">
+                  <a href="tel:+917447221616" className="hover:text-terracotta transition-colors">074472 21616</a>
+                  <span className="text-muted-foreground"> · </span>
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-terracotta transition-colors">WhatsApp</a>
+                </div>
               </div>
 
               <div>
                 <div className="text-muted-foreground mb-2 text-xs">Timings</div>
-                <div className="font-light normal-case tracking-normal text-base">Mon–Sun, open till 10:30 PM</div>
+                <div className="font-light normal-case tracking-normal text-base">Mon–Sun, open till 9:00 PM</div>
               </div>
             </div>
           </div>
@@ -327,7 +341,7 @@ export default function Home() {
         {/* Map */}
         <div className="h-[40vh] w-full bg-muted">
           <iframe 
-            src="https://www.google.com/maps?q=2nd+floor,+Legend+Corporation,+Barkatpura+Main+Rd,+Kachiguda,+Hyderabad+500027&output=embed" 
+            src="https://www.google.com/maps?q=Office+No+17B,+Mudra+Commercial+Complex,+Pune-Satara+Rd,+Bibwewadi,+Pune+411037&output=embed" 
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
@@ -342,11 +356,11 @@ export default function Home() {
       {/* Footer */}
       <footer className="py-12 bg-background border-t border-border/40 text-center">
         <div className="container mx-auto px-6">
-          <div className="font-serif text-3xl tracking-wide mb-4">
-            Happy Life<span className="text-terracotta italic ml-1">Clinic</span>
+          <div className="flex justify-center mb-6">
+            <img src={skinElementsLogo} alt="The Skin Elements — Dr. Vaishnavi's Clinic" className="h-32 w-auto" />
           </div>
           <p className="text-muted-foreground text-sm font-light mb-8 max-w-sm mx-auto">
-            Expert dermatology and cosmetic care in the heart of Hyderabad.
+            Dr. Vaishnavi's Skin, Hair, Laser & Wellness Clinic — Bibwewadi, Pune.
           </p>
           
           <div className="flex justify-center mb-12">
@@ -356,7 +370,7 @@ export default function Home() {
           </div>
           
           <div className="text-[10px] uppercase tracking-widest text-muted-foreground opacity-60">
-            &copy; {new Date().getFullYear()} Happy Life Dermatologists Cosmetic Clinic. All rights reserved.
+            &copy; {new Date().getFullYear()} The Skin Elements — Dr. Vaishnavi's Clinic. All rights reserved.
           </div>
         </div>
       </footer>
