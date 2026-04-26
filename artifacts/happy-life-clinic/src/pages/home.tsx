@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { MapPin, Phone, Clock, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import heroCoverImg from "@/assets/images/clinic-cover.jpg";
+import heroCoverImg from "@/assets/images/clinic-cover.png";
 import skinTextureImg from "@/assets/images/skin-texture.png";
 import serumAppImg from "@/assets/images/serum-application.png";
 import sideProfileImg from "@/assets/images/side-profile.png";
