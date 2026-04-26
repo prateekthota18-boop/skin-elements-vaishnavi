@@ -10,6 +10,8 @@ import sideProfileImg from "@/assets/images/side-profile.png";
 import productBottleImg from "@/assets/images/product-bottle.png";
 import treatmentImg from "@/assets/images/treatment.png";
 import skinElementsLogo from "@/assets/images/skin-elements-logo.png";
+import clinicInterior1 from "@/assets/images/clinic-interior-1.jpg";
+import clinicInterior2 from "@/assets/images/clinic-interior-2.jpg";
 
 const WHATSAPP_URL = "https://wa.me/917507649901?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20The%20Skin%20Elements";
 
@@ -219,9 +221,9 @@ export default function Home() {
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="order-2 md:order-1 relative">
-              <RevealImage src={sideProfileImg} alt="Side profile" className="w-4/5 aspect-[3/4]" />
+              <RevealImage src={clinicInterior1} alt="The Skin Elements clinic reception" className="w-4/5 aspect-[3/4]" />
               <div className="absolute -bottom-10 -right-4 w-2/3 aspect-square border-8 border-background">
-                <RevealImage src={productBottleImg} alt="Serum bottle" className="w-full h-full" />
+                <RevealImage src={clinicInterior2} alt="Treatment room at The Skin Elements" className="w-full h-full" />
               </div>
             </div>
             <div className="order-1 md:order-2">
