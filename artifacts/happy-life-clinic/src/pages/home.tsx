@@ -12,6 +12,8 @@ import treatmentImg from "@/assets/images/treatment.png";
 import skinElementsLogo from "@/assets/images/skin-elements-logo.png";
 import clinicInterior1 from "@/assets/images/clinic-interior-1.jpg";
 import clinicInterior2 from "@/assets/images/clinic-interior-2.jpg";
+import clinicInterior3 from "@/assets/images/clinic-interior-3.jpg";
+import clinicInterior4 from "@/assets/images/clinic-interior-4.jpg";
 import drVaishnaviImg from "@/assets/images/dr-vaishnavi.webp";
 
 const WHATSAPP_URL = "https://wa.me/917507649901?text=Hi%2C%20I'd%20like%20to%20book%20an%20appointment%20at%20The%20Skin%20Elements";
@@ -176,16 +178,26 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-1 mb-1">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-1 mb-1">
             <RevealImage
               src={clinicInterior1}
               alt="The Skin Elements clinic reception"
-              className="aspect-[16/10] w-full"
+              className="aspect-[4/5] w-full"
             />
             <RevealImage
               src={clinicInterior2}
               alt="Treatment room at The Skin Elements"
-              className="aspect-[16/10] w-full"
+              className="aspect-[4/5] w-full"
+            />
+            <RevealImage
+              src={clinicInterior3}
+              alt="In-clinic dermatology consultation"
+              className="aspect-[4/5] w-full"
+            />
+            <RevealImage
+              src={clinicInterior4}
+              alt="Clinic entrance at The Skin Elements"
+              className="aspect-[4/5] w-full"
             />
           </div>
 
